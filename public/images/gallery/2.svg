@@ -1,0 +1,11 @@
+<svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="500" fill="#f5f5f4"/>
+  <rect x="0.5" y="0.5" width="399" height="499" fill="none" stroke="#0a0a0a1a" stroke-width="1"/>
+  <g fill="none" stroke="#0a0a0a55" stroke-width="2">
+    <rect x="110" y="200" width="180" height="90" rx="18"/>
+    <path d="M120 290 Q120 340 160 340 L240 340 Q280 340 280 290" />
+    <circle cx="200" cy="150" r="26"/>
+  </g>
+  <text x="200" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0a0a0a66">Zona de lavado</text>
+  <text x="200" y="432" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#0a0a0a44">Reemplazar por foto real</text>
+</svg>

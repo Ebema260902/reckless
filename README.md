@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Reckless Studio — sitio web
 
-## Getting Started
+Sitio de una sola página para la barbería Reckless Studio (Palmares, Alajuela). Hecho con Next.js + Tailwind CSS.
 
-First, run the development server:
+## Cómo editar el contenido
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Casi todo el texto del sitio (servicios, precios, horarios, equipo, productos, testimonios, WhatsApp, Instagram, dirección) está en un solo archivo:
+
+```
+src/data/content.js
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Editá ese archivo y guardá — no hace falta tocar nada más para cambiar textos o precios.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Logo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+El logo está en `public/logo/reckless-logo.svg` y lo usa el componente `src/components/Logo.js`. Como no tengo forma de guardar en disco la imagen que se pega directamente en el chat, este SVG es una reconstrucción vectorial del wordmark "Reckless." (no el archivo original pixel por pixel). Si tenés el archivo real (PNG/SVG exportado de Canva, Illustrator, etc.), reemplazá `public/logo/reckless-logo.svg` por ese archivo con el mismo nombre, o subí el tuyo con otro nombre y actualizá el `src` en `Logo.js`.
 
-## Learn More
+## Cómo reemplazar las fotos de la galería
 
-To learn more about Next.js, take a look at the following resources:
+Las imágenes de `src/data/content.js` → `gallery` son placeholders (dibujos simples en SVG) porque el sitio se armó sin las fotos originales del local. Para poner las fotos reales:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Subí tus fotos a `public/images/gallery/` (por ejemplo `1.jpg`, `2.jpg`, `3.jpg`, `4.jpg`).
+2. En `src/data/content.js`, en el arreglo `gallery`, cambiá el `src` de cada item para que apunte a tu archivo (ej: `"/images/gallery/1.jpg"`).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Desarrollo local
 
-## Deploy on Vercel
+```bash
+npm install
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Abrí [http://localhost:3000](http://localhost:3000).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy a Vercel
+
+1. Subí este proyecto a un repositorio de GitHub.
+2. Entrá a [vercel.com/new](https://vercel.com/new), importá el repositorio y hacé click en "Deploy" (no hace falta configurar nada más, Vercel detecta Next.js automáticamente).
+3. Cada vez que hagas push a la rama principal, Vercel actualiza el sitio solo.
