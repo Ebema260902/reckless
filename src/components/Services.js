@@ -1,4 +1,5 @@
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 import { services, servicesNote, whatsappLink } from "@/data/content";
 
 const formatColones = (value) =>
@@ -19,10 +20,11 @@ export default function Services() {
         />
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <div
+          {services.map((service, i) => (
+            <Reveal
               key={service.name}
-              className="flex flex-col justify-between rounded-2xl border border-black/10 bg-black/[0.02] p-6 transition hover:border-black/25"
+              delay={(i % 3) * 100}
+              className="flex flex-col justify-between rounded-2xl border border-black/10 bg-black/[0.02] p-6 transition hover:-translate-y-1 hover:border-black/25 hover:shadow-lg hover:shadow-black/5"
             >
               <div>
                 <div className="flex items-start justify-between gap-4">
@@ -35,7 +37,7 @@ export default function Services() {
                   {service.description}
                 </p>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 

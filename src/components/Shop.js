@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 import { products, shopCategories, whatsappLink } from "@/data/content";
 
 const formatColones = (value) =>
@@ -10,6 +12,15 @@ const formatColones = (value) =>
     currency: "CRC",
     maximumFractionDigits: 0,
   }).format(value);
+
+// Textura de fondo (foto de stock en blanco y negro) para cada ficha.
+// Es decorativa -- no representa el producto exacto. Se puede reemplazar por
+// fotos reales de cada producto subiéndolas a /public/images/products.
+const TEXTURE_COUNT = 26;
+const textureFor = (name) => {
+  const idx = products.findIndex((p) => p.name === name);
+  return `/images/products/p${((idx < 0 ? 0 : idx) % TEXTURE_COUNT)}.jpg`;
+};
 
 export default function Shop() {
   const [active, setActive] = useState(shopCategories[0]);
@@ -29,7 +40,7 @@ export default function Shop() {
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className={`rounded-full border px-5 py-2 text-sm font-medium transition ${
+              className={`rounded-full border px-5 py-2 text-sm font-medium transition hover:-translate-y-0.5 ${
                 active === cat
                   ? "border-black bg-black text-white"
                   : "border-black/20 text-black/60 hover:border-black/50 hover:text-black"
@@ -41,13 +52,27 @@ export default function Shop() {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((product) => (
-            <div
-              key={product.name}
-              className="flex items-start gap-4 rounded-2xl border border-black/10 bg-black/[0.02] p-5"
+          {filtered.map((product, i) => (
+            <Reveal
+              key={`${active}-${product.name}`}
+              delay={(i % 3) * 80}
+              className="group flex items-start gap-4 rounded-2xl border border-black/10 bg-black/[0.02] p-5 transition hover:-translate-y-1 hover:border-black/25 hover:shadow-lg hover:shadow-black/5"
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-black/10 text-lg font-bold">
-                {product.name[0]}
+              <div className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl">
+                {/* Foto de stock decorativa en b/n, oscurecida, con la inicial encima */}
+                <Image
+                  src={textureFor(product.name)}
+                  alt=""
+                  aria-hidden="true"
+                  fill
+                  unoptimized
+                  sizes="56px"
+                  className="object-cover grayscale transition duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/55" />
+                <span className="relative text-lg font-bold text-white">
+                  {product.name[0]}
+                </span>
               </div>
               <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-2">
@@ -71,7 +96,7 @@ export default function Shop() {
                   </p>
                 )}
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 

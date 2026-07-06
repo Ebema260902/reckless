@@ -97,14 +97,21 @@ export const team = [
   },
 ];
 
-// Galería. Las imágenes son placeholders (SVG) -- reemplazalas subiendo tus
-// fotos a /public/images/gallery con el mismo nombre de archivo (ej: 1.jpg)
-// y actualizando el "src" de cada item acá.
+// Galería. Fotos reales del local. Para agregar más, subí tus imágenes a
+// /public/images/gallery y añadí un objeto { src, alt } acá.
 export const gallery = [
-  { src: "/images/gallery/1.svg", alt: "Recepción y logo Reckless Studio" },
-  { src: "/images/gallery/2.svg", alt: "Zona de lavado" },
-  { src: "/images/gallery/3.svg", alt: "Sillones de barbero" },
-  { src: "/images/gallery/4.svg", alt: "Iluminación y detalles del local" },
+  {
+    src: "/images/gallery/local-recepcion.jpg",
+    alt: "Recepción y zona de lavado de Reckless Studio con el logo en la pared",
+    width: 335,
+    height: 597,
+  },
+  {
+    src: "/images/gallery/local-sillones.avif",
+    alt: "Área principal de barbería con sillones en Reckless Studio",
+    width: 1280,
+    height: 720,
+  },
 ];
 
 // Testimonios de ejemplo -- reemplazalos por reseñas reales de clientes.

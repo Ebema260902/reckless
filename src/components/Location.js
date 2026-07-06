@@ -1,4 +1,5 @@
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 import { business, hours, whatsappLink } from "@/data/content";
 
 export default function Location() {
@@ -8,7 +9,7 @@ export default function Location() {
         <SectionHeading eyebrow="Visitanos" title="Ubicación y horarios" />
 
         <div className="grid gap-8 lg:grid-cols-2">
-          <div className="overflow-hidden rounded-2xl border border-black/10">
+          <Reveal className="overflow-hidden rounded-2xl border border-black/10">
             <iframe
               title="Ubicación Reckless Studio"
               src={business.mapsEmbedSrc}
@@ -17,9 +18,12 @@ export default function Location() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-          </div>
+          </Reveal>
 
-          <div className="flex flex-col justify-between rounded-2xl border border-black/10 bg-black/[0.02] p-8">
+          <Reveal
+            delay={120}
+            className="flex flex-col justify-between rounded-2xl border border-black/10 bg-black/[0.02] p-8"
+          >
             <div>
               <h3 className="text-lg font-semibold">Dirección</h3>
               <p className="mt-2 text-black/70">{business.address}</p>
@@ -56,7 +60,7 @@ export default function Location() {
                 Cómo llegar
               </a>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
