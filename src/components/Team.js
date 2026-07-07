@@ -34,7 +34,7 @@ export default function Team() {
                   href={`https://www.instagram.com/${member.instagram}/`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center gap-2 rounded-full border border-black/20 px-4 py-1.5 text-sm font-medium text-black/80 transition hover:border-black hover:bg-black hover:text-white"
+                  className="mt-4 inline-flex items-center gap-2 rounded-full border border-black/20 px-4 py-1.5 text-sm font-medium text-black/80 transition-all duration-300 ease-in-out hover:border-black hover:bg-black hover:text-white"
                 >
                   <svg
                     viewBox="0 0 24 24"

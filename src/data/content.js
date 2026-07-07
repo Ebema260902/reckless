@@ -53,6 +53,7 @@ export const services = [
     name: "Corte + Barba",
     price: 10000,
     description: "Corte de cabello más diseño y perfilado de barba.",
+    featured: true,
   },
   {
     name: "Diseño y perfilado de barba",

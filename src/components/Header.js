@@ -40,7 +40,7 @@ export default function Header() {
             href={whatsappLink("Hola, quisiera reservar un turno")}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-black px-5 py-2 text-sm font-semibold text-white transition hover:bg-black/80"
+            className="rounded-full bg-black px-5 py-2 text-sm font-semibold text-white transition-all duration-300 ease-in-out hover:bg-black/80"
           >
             Reservar
           </a>

@@ -10,47 +10,69 @@ const formatColones = (value) =>
   }).format(value);
 
 export default function Services() {
+  const featured = services.find((s) => s.featured);
+  const rest = services.filter((s) => !s.featured);
+
   return (
-    <section id="servicios" className="bg-white px-4 py-24 md:px-6">
-      <div className="mx-auto max-w-6xl">
+    <section id="servicios" className="bg-white px-4 py-28 md:px-6">
+      <div className="mx-auto max-w-5xl">
         <SectionHeading
           eyebrow="Lo que hacemos"
           title="Servicios"
           description="Cortes, barba y afeitado con atención personalizada."
+          align="left"
         />
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, i) => (
+        <div className="border-b border-black/10">
+          {/* Servicio estrella -- mayor peso visual para romper la retícula */}
+          {featured && (
+            <Reveal className="grid items-end gap-6 border-t border-black/15 py-10 md:grid-cols-12">
+              <div className="md:col-span-9">
+                <p className="eyebrow text-xs text-black/40">El más pedido</p>
+                <h3 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">
+                  {featured.name}
+                </h3>
+                <p className="mt-4 max-w-md text-black/55">
+                  {featured.description}
+                </p>
+              </div>
+              <div className="md:col-span-3 md:text-right">
+                <span className="text-3xl font-bold md:text-4xl">
+                  {formatColones(featured.price)}
+                </span>
+              </div>
+            </Reveal>
+          )}
+
+          {/* Resto de servicios -- lista editorial con divisorias finas */}
+          {rest.map((service, i) => (
             <Reveal
               key={service.name}
-              delay={(i % 3) * 100}
-              className="flex flex-col justify-between rounded-2xl border border-black/10 bg-black/[0.02] p-6 transition hover:-translate-y-1 hover:border-black/25 hover:shadow-lg hover:shadow-black/5"
+              delay={i * 70}
+              className="grid grid-cols-[1fr_auto] items-baseline gap-6 border-t border-black/10 py-6 transition-colors duration-300 ease-in-out hover:bg-black/[0.015]"
             >
               <div>
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-lg font-semibold">{service.name}</h3>
-                  <span className="whitespace-nowrap text-lg font-bold">
-                    {formatColones(service.price)}
-                  </span>
-                </div>
-                <p className="mt-2 text-sm text-black/60">
+                <h3 className="text-lg font-semibold md:text-xl">
+                  {service.name}
+                </h3>
+                <p className="mt-1 text-sm text-black/45">
                   {service.description}
                 </p>
               </div>
+              <span className="whitespace-nowrap text-lg font-bold md:text-xl">
+                {formatColones(service.price)}
+              </span>
             </Reveal>
           ))}
         </div>
 
-        <p className="mt-8 text-center text-xs text-black/40">
-          {servicesNote}
-        </p>
-
-        <div className="mt-8 flex justify-center">
+        <div className="mt-10 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
+          <p className="max-w-sm text-xs text-black/40">{servicesNote}</p>
           <a
             href={whatsappLink("Hola, quisiera reservar un turno")}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-black px-8 py-3 font-semibold text-white transition hover:bg-black/80"
+            className="shrink-0 rounded-full bg-black px-8 py-3.5 font-semibold text-white transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-black/80"
           >
             Reservar turno
           </a>

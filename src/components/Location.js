@@ -47,7 +47,7 @@ export default function Location() {
                 href={whatsappLink("Hola, quisiera reservar un turno")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 rounded-full bg-black px-6 py-3 text-center font-semibold text-white transition hover:bg-black/80"
+                className="flex-1 rounded-full bg-black px-6 py-3.5 text-center font-semibold text-white transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-black/80"
               >
                 WhatsApp
               </a>
@@ -55,7 +55,7 @@ export default function Location() {
                 href={business.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 rounded-full border border-black/20 px-6 py-3 text-center font-semibold text-black transition hover:bg-black/5"
+                className="flex-1 rounded-full border border-black/20 px-6 py-3.5 text-center font-semibold text-black transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:border-black hover:bg-black hover:text-white"
               >
                 Cómo llegar
               </a>

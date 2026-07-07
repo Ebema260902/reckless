@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -11,6 +11,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Serif editorial -- se usa solo en etiquetas pequeñas en mayúsculas (eyebrows)
+// para crear contraste tipográfico moderno/clásico de alta gama.
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["500", "600"],
+});
+
 export const metadata = {
   title: "Reckless Studio | Barbería en Palmares, Alajuela",
   description:
@@ -21,7 +29,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-black">
         {children}

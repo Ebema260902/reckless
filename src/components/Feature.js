@@ -22,9 +22,7 @@ export default function Feature() {
         </Reveal>
 
         <Reveal delay={120}>
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
-            El espacio
-          </p>
+          <p className="eyebrow text-sm text-white/45">El espacio</p>
           <h2 className="mt-3 text-3xl font-black leading-tight tracking-tight md:text-4xl">
             Un lugar pensado al detalle
           </h2>
@@ -37,7 +35,7 @@ export default function Feature() {
             href={whatsappLink("Hola, quisiera reservar un turno")}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-block rounded-full bg-white px-8 py-3 font-semibold text-black transition hover:-translate-y-0.5 hover:bg-white/85"
+            className="mt-8 inline-block rounded-full bg-white px-8 py-3.5 font-semibold text-black transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-white/85"
           >
             Reservar tu turno
           </a>
