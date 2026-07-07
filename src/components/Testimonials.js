@@ -4,7 +4,10 @@ import { testimonials } from "@/data/content";
 
 export default function Testimonials() {
   return (
-    <section id="testimonios" className="bg-white px-4 py-24 md:px-6">
+    <section
+      id="testimonios"
+      className="bg-white px-4 py-14 sm:py-16 md:px-6 md:py-20 lg:py-24"
+    >
       <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow="Clientes" title="Testimonios" />
 

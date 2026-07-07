@@ -5,7 +5,10 @@ import { gallery } from "@/data/content";
 
 export default function Gallery() {
   return (
-    <section id="galeria" className="bg-white px-4 py-28 md:px-6">
+    <section
+      id="galeria"
+      className="bg-white px-4 py-16 sm:py-20 md:px-6 md:py-24 lg:py-28"
+    >
       <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow="Nuestro espacio" title="Galería" />
 

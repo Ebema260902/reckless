@@ -43,8 +43,8 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-black px-4 py-16 text-white md:px-6">
-      <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-3 md:gap-8">
+    <footer className="bg-black px-4 py-12 text-white sm:py-14 md:px-6 md:py-16">
+      <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
         {/* Columna 1 -- Marca */}
         <div>
           <p className="text-2xl font-black tracking-tight">
@@ -102,7 +102,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-14 max-w-6xl border-t border-white/10 pt-6">
+      <div className="mx-auto mt-10 max-w-6xl border-t border-white/10 pt-6 sm:mt-12 md:mt-14">
         <p className="text-xs text-white/35">
           © {new Date().getFullYear()} {business.name}. Todos los derechos
           reservados.

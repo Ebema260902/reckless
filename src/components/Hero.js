@@ -4,18 +4,18 @@ import { business, whatsappLink } from "@/data/content";
 export default function Hero() {
   return (
     <section id="inicio" className="relative overflow-hidden bg-white">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:px-6 lg:min-h-[80vh] lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-20">
+      <div className="mx-auto max-w-6xl px-4 py-12 sm:py-16 md:px-6 lg:grid lg:min-h-[80vh] lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16 lg:py-20">
         {/* Columna de texto -- alineada a la izquierda (editorial, asimétrico) */}
-        <div className="order-2 text-left lg:order-1">
+        <div className="max-w-full text-left">
           <p
-            className="animate-rise eyebrow text-sm text-black/50"
+            className="animate-rise eyebrow text-xs text-black/50 sm:text-sm"
             style={{ "--rise-delay": "0ms" }}
           >
             {business.tagline} · {business.city}
           </p>
 
           <h1
-            className="animate-rise mt-6 text-6xl font-black leading-[0.95] tracking-tight md:text-7xl lg:text-8xl"
+            className="animate-rise mt-5 break-words text-5xl font-black leading-[0.95] tracking-tight sm:text-6xl md:text-7xl lg:mt-6 lg:text-8xl"
             style={{ "--rise-delay": "120ms" }}
           >
             {business.name.replace(" Studio", "")}
@@ -23,7 +23,7 @@ export default function Hero() {
           </h1>
 
           <p
-            className="animate-rise mt-7 max-w-md text-lg leading-relaxed text-black/60"
+            className="animate-rise mt-6 max-w-md text-base leading-relaxed text-black/60 sm:text-lg lg:mt-7"
             style={{ "--rise-delay": "260ms" }}
           >
             Cortes precisos, ambiente cuidado y atención de barbería en{" "}
@@ -31,7 +31,7 @@ export default function Hero() {
           </p>
 
           <div
-            className="animate-rise mt-10 flex flex-col gap-4 sm:flex-row"
+            className="animate-rise mt-8 flex flex-col gap-4 sm:flex-row lg:mt-10"
             style={{ "--rise-delay": "400ms" }}
           >
             <a
@@ -49,22 +49,42 @@ export default function Hero() {
               Ver servicios
             </a>
           </div>
+
+          {/* Cierre visual sutil en mobile/tablet -- foto baja y compacta,
+              justo debajo de los botones. En desktop se oculta: ahí la misma
+              imagen aparece como columna alta a la derecha. */}
+          <div
+            className="animate-rise mt-8 lg:hidden"
+            style={{ "--rise-delay": "500ms" }}
+          >
+            <div className="grain relative h-[220px] overflow-hidden rounded-2xl border border-black/10 sm:h-[280px]">
+              <Image
+                src="/images/gallery/g2.jpg"
+                alt="Interior de barbería con sillones clásicos, blanco y negro"
+                fill
+                unoptimized
+                className="cinematic object-cover"
+                sizes="100vw"
+              />
+            </div>
+          </div>
         </div>
 
-        {/* Ancla visual -- imagen cinematográfica en blanco y negro con grano */}
+        {/* Ancla visual -- imagen cinematográfica en blanco y negro con grano.
+            Solo desktop: en mobile la misma foto ya aparece arriba, compacta. */}
         <div
-          className="animate-rise order-1 lg:order-2"
+          className="animate-rise hidden lg:block"
           style={{ "--rise-delay": "200ms" }}
         >
-          <div className="grain relative h-[360px] overflow-hidden rounded-2xl border border-black/10 sm:h-[440px] lg:h-[72vh] lg:max-h-[600px]">
+          <div className="grain relative overflow-hidden rounded-2xl border border-black/10 lg:h-[72vh] lg:max-h-[600px]">
             <Image
-              src="/images/gallery/local-recepcion.jpg"
-              alt="Interior de Reckless Studio en blanco y negro"
+              src="/images/gallery/g2.jpg"
+              alt="Interior de barbería con sillones clásicos, blanco y negro"
               fill
               priority
               unoptimized
               className="cinematic object-cover"
-              sizes="(max-width: 1024px) 100vw, 45vw"
+              sizes="45vw"
             />
           </div>
         </div>

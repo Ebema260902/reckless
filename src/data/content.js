@@ -48,35 +48,44 @@ export const hours = [
 
 // Servicios. El precio de "Corte de cabello" es el real (₡7.000);
 // el resto son precios de referencia -- ajustalos cuando tengas la lista final.
+// "image" es la foto que aparece al pasar el cursor sobre el servicio (sección
+// Servicios). Usa las mismas fotos de /public/images/gallery -- reemplazalas
+// por fotos reales de cada servicio cuando las tengas.
 export const services = [
   {
     name: "Corte de cabello",
     price: 7000,
     description: "Corte a tijera y/o máquina, incluye lavado.",
+    image: "/images/gallery/g7.jpg",
   },
   {
     name: "Corte + Barba",
     price: 10000,
     description: "Corte de cabello más diseño y perfilado de barba.",
     featured: true,
+    image: "/images/gallery/g4.jpg",
   },
   {
     name: "Diseño y perfilado de barba",
     price: 5000,
     description: "Perfilado, línea y afeitado de contorno.",
+    image: "/images/gallery/g5.jpg",
   },
   {
     name: "Afeitado clásico",
     price: 6000,
     description: "Afeitado con navaja, toalla caliente y after shave.",
+    image: "/images/gallery/g1.jpg",
   },
   {
     name: "Corte niño",
     price: 6000,
     description: "Corte para niños hasta 12 años.",
+    image: "/images/gallery/local-sillones.avif",
   },
   {
     name: "Perfilado de cejas",
+    image: "/images/gallery/local-recepcion.jpg",
     price: 3000,
     description: "Diseño y limpieza de cejas.",
   },
@@ -107,6 +116,7 @@ export const team = [
 // de barbería de alta calidad (Unsplash, libres de licencia) para dar densidad.
 // Reemplazalas por fotos reales del estudio cuando las tengas: subí la imagen a
 // /public/images/gallery y actualizá el "src" aquí.
+// Nota: g2.jpg no está acá -- se usa exclusivamente como imagen del Hero.
 export const gallery = [
   {
     src: "/images/gallery/local-recepcion.jpg",
@@ -118,16 +128,10 @@ export const gallery = [
   },
   { src: "/images/gallery/g1.jpg", alt: "Afeitado con navaja en barbería" },
   {
-    src: "/images/gallery/g2.jpg",
-    alt: "Interior de barbería con sillones clásicos",
-  },
-  { src: "/images/gallery/g3.jpg", alt: "Sillón de barbero de cuero" },
-  {
     src: "/images/gallery/g4.jpg",
     alt: "Corte de cabello con navaja y detalle de degradado",
   },
   { src: "/images/gallery/g5.jpg", alt: "Afeitado clásico con toalla" },
-  { src: "/images/gallery/g6.jpg", alt: "Secado y peinado en barbería" },
   { src: "/images/gallery/g7.jpg", alt: "Corte texturizado con peine" },
 ];
 

@@ -10,15 +10,19 @@ export default function SectionHeading({
     align === "left" ? "mr-auto text-left" : "mx-auto text-center";
 
   return (
-    <Reveal className={`mb-14 max-w-2xl ${alignCls}`}>
+    <Reveal className={`mb-10 max-w-2xl sm:mb-12 md:mb-14 ${alignCls}`}>
       {eyebrow && (
-        <p className="eyebrow mb-4 text-sm text-black/45">{eyebrow}</p>
+        <p className="eyebrow mb-3 text-xs text-black/45 sm:mb-4 sm:text-sm">
+          {eyebrow}
+        </p>
       )}
-      <h2 className="text-4xl font-black tracking-tight md:text-5xl">
+      <h2 className="text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">
         {title}
       </h2>
       {description && (
-        <p className="mt-5 text-base text-black/55">{description}</p>
+        <p className="mt-4 text-sm text-black/55 sm:mt-5 sm:text-base">
+          {description}
+        </p>
       )}
     </Reveal>
   );

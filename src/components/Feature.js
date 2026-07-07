@@ -7,7 +7,7 @@ import { whatsappLink } from "@/data/content";
 // así se ve nítida a pesar de ser una foto vertical.
 export default function Feature() {
   return (
-    <section className="bg-black px-4 py-20 text-white md:px-6">
+    <section className="bg-black px-4 py-14 text-white sm:py-16 md:px-6 md:py-20">
       <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-2">
         <Reveal className="relative h-[420px] overflow-hidden rounded-2xl border border-white/10 sm:h-[500px] lg:h-[560px]">
           <Image

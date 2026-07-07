@@ -17,6 +17,14 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  /* Red de seguridad: ningún elemento (marquee, imágenes, grids anchos) puede
+     generar scroll horizontal, sin importar el viewport. */
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -39,6 +47,17 @@ body {
 /* -------------------------------------------------------------------------- */
 .cinematic {
   filter: grayscale(1) contrast(1.12) brightness(0.96);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Numeral editorial: serif con cifras old-style (alturas variables), para     */
+/* usar como ancla visual sutil delante de listas (ej. "01" antes de un        */
+/* servicio) sin competir con la tipografía sans de los títulos.               */
+/* -------------------------------------------------------------------------- */
+.numeral {
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+  font-feature-settings: "onum" 1;
+  font-variant-numeric: oldstyle-nums;
 }
 
 .grain::after {
@@ -151,5 +170,29 @@ body {
 
   .marquee-track {
     animation: none;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Mobile (max-width: 768px): tipografía editorial más compacta y tap targets */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* El tracking amplio (0.22em) de los eyebrows se ve elegante en desktop,
+     pero en pantallas angostas fuerza demasiadas líneas -- lo ajustamos. */
+  .eyebrow {
+    letter-spacing: 0.14em;
+  }
+
+  /* Evita que cualquier hijo con ancho fijo o negativo empuje el viewport. */
+  #__next,
+  main {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  /* Objetivos táctiles cómodos para todo elemento interactivo en mobile. */
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
   }
 }

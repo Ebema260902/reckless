@@ -24,7 +24,10 @@ export default function Shop() {
   const pool = productPhotos[active] || [];
 
   return (
-    <section id="tienda" className="bg-white px-4 py-28 md:px-6">
+    <section
+      id="tienda"
+      className="bg-white px-4 py-16 sm:py-20 md:px-6 md:py-24 lg:py-28"
+    >
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Productos"
