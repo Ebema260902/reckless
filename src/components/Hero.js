@@ -4,7 +4,7 @@ import { business, whatsappLink } from "@/data/content";
 export default function Hero() {
   return (
     <section id="inicio" className="relative overflow-hidden bg-white">
-      <div className="mx-auto grid min-h-[92vh] max-w-6xl items-center gap-12 px-4 py-24 md:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:px-6 lg:min-h-[80vh] lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-20">
         {/* Columna de texto -- alineada a la izquierda (editorial, asimétrico) */}
         <div className="order-2 text-left lg:order-1">
           <p
@@ -56,7 +56,7 @@ export default function Hero() {
           className="animate-rise order-1 lg:order-2"
           style={{ "--rise-delay": "200ms" }}
         >
-          <div className="grain relative aspect-[4/5] overflow-hidden rounded-2xl border border-black/10 lg:aspect-[3/4]">
+          <div className="grain relative h-[360px] overflow-hidden rounded-2xl border border-black/10 sm:h-[440px] lg:h-[72vh] lg:max-h-[600px]">
             <Image
               src="/images/gallery/local-recepcion.jpg"
               alt="Interior de Reckless Studio en blanco y negro"

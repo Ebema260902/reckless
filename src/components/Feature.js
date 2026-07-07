@@ -9,14 +9,13 @@ export default function Feature() {
   return (
     <section className="bg-black px-4 py-20 text-white md:px-6">
       <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-2">
-        <Reveal className="overflow-hidden rounded-2xl border border-white/10">
+        <Reveal className="relative h-[420px] overflow-hidden rounded-2xl border border-white/10 sm:h-[500px] lg:h-[560px]">
           <Image
             src="/images/gallery/local-recepcion.jpg"
             alt="Recepción de Reckless Studio con el logo iluminado en la pared"
-            width={335}
-            height={597}
+            fill
             unoptimized
-            className="h-auto w-full"
+            className="object-cover"
             sizes="(max-width: 768px) 100vw, 40vw"
           />
         </Reveal>

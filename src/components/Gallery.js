@@ -5,25 +5,24 @@ import { gallery } from "@/data/content";
 
 export default function Gallery() {
   return (
-    <section id="galeria" className="bg-white px-4 py-24 md:px-6">
-      <div className="mx-auto max-w-4xl">
+    <section id="galeria" className="bg-white px-4 py-28 md:px-6">
+      <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow="Nuestro espacio" title="Galería" />
 
-        <div className="grid items-start gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4">
           {gallery.map((item, i) => (
             <Reveal
               key={item.src}
-              delay={(i % 2) * 120}
-              className="group overflow-hidden rounded-2xl border border-black/10 bg-black/[0.02]"
+              delay={(i % 3) * 100}
+              className="group relative aspect-[4/5] overflow-hidden rounded-xl border border-black/10 bg-black/[0.02]"
             >
               <Image
                 src={item.src}
                 alt={item.alt}
-                width={item.width}
-                height={item.height}
+                fill
                 unoptimized
-                className="h-auto w-full transition duration-500 group-hover:scale-[1.03]"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover grayscale transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:grayscale-0"
+                sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 30vw"
               />
             </Reveal>
           ))}

@@ -1,10 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
-import ProductIcon from "./ProductIcon";
-import { products, shopCategories, whatsappLink } from "@/data/content";
+import {
+  products,
+  productPhotos,
+  shopCategories,
+  whatsappLink,
+} from "@/data/content";
 
 const formatColones = (value) =>
   new Intl.NumberFormat("es-CR", {
@@ -16,6 +21,7 @@ const formatColones = (value) =>
 export default function Shop() {
   const [active, setActive] = useState(shopCategories[0]);
   const filtered = products.filter((p) => p.category === active);
+  const pool = productPhotos[active] || [];
 
   return (
     <section id="tienda" className="bg-white px-4 py-28 md:px-6">
@@ -46,12 +52,16 @@ export default function Shop() {
           {filtered.map((product, i) => (
             <Reveal key={`${active}-${product.name}`} delay={(i % 3) * 90}>
               <article className="group">
-                {/* Contenedor de imagen de producto -- aloja el ícono ahora y
-                    puede alojar una foto real (PNG transparente) más adelante. */}
-                <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-2xl bg-neutral-100 transition-colors duration-300 ease-in-out group-hover:bg-neutral-200/70">
-                  <ProductIcon
-                    category={product.category}
-                    className="h-20 w-20 text-black/30 transition-transform duration-500 ease-in-out group-hover:scale-110"
+                {/* Contenedor de imagen de producto -- foto real de grooming.
+                    Reemplazá el src por la foto real de cada producto. */}
+                <div className="relative aspect-square overflow-hidden rounded-2xl bg-neutral-100">
+                  <Image
+                    src={pool[i % pool.length]}
+                    alt={product.name}
+                    fill
+                    unoptimized
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
                   />
                   {product.badge && (
                     <span className="absolute left-3 top-3 rounded-full bg-black px-2.5 py-1 text-[0.6rem] font-medium uppercase tracking-wide text-white">

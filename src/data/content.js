@@ -14,6 +14,11 @@ export const business = {
   whatsappDisplay: "8749 6943",
   instagramUrl: "https://www.instagram.com/recklessstudiocr/",
   instagramHandle: "@recklessstudiocr",
+  // Redes secundarias -- reemplazá con los perfiles reales cuando los tengas.
+  facebookUrl: "https://www.facebook.com/",
+  tiktokUrl: "https://www.tiktok.com/",
+  description:
+    "Cortes precisos, ambiente cuidado y atención premium en Palmares, Costa Rica.",
   // Mapa aproximado centrado en Palmares (OpenStreetMap, no requiere API key).
   // Si tenés la ubicación exacta del local, ajustá lat/lon abajo.
   mapsEmbedSrc:
@@ -98,21 +103,32 @@ export const team = [
   },
 ];
 
-// Galería. Fotos reales del local. Para agregar más, subí tus imágenes a
-// /public/images/gallery y añadí un objeto { src, alt } acá.
+// Galería. Las dos primeras son fotos reales del local; el resto son imágenes
+// de barbería de alta calidad (Unsplash, libres de licencia) para dar densidad.
+// Reemplazalas por fotos reales del estudio cuando las tengas: subí la imagen a
+// /public/images/gallery y actualizá el "src" aquí.
 export const gallery = [
   {
     src: "/images/gallery/local-recepcion.jpg",
     alt: "Recepción y zona de lavado de Reckless Studio con el logo en la pared",
-    width: 335,
-    height: 597,
   },
   {
     src: "/images/gallery/local-sillones.avif",
     alt: "Área principal de barbería con sillones en Reckless Studio",
-    width: 1280,
-    height: 720,
   },
+  { src: "/images/gallery/g1.jpg", alt: "Afeitado con navaja en barbería" },
+  {
+    src: "/images/gallery/g2.jpg",
+    alt: "Interior de barbería con sillones clásicos",
+  },
+  { src: "/images/gallery/g3.jpg", alt: "Sillón de barbero de cuero" },
+  {
+    src: "/images/gallery/g4.jpg",
+    alt: "Corte de cabello con navaja y detalle de degradado",
+  },
+  { src: "/images/gallery/g5.jpg", alt: "Afeitado clásico con toalla" },
+  { src: "/images/gallery/g6.jpg", alt: "Secado y peinado en barbería" },
+  { src: "/images/gallery/g7.jpg", alt: "Corte texturizado con peine" },
 ];
 
 // Testimonios de ejemplo -- reemplazalos por reseñas reales de clientes.
@@ -138,6 +154,34 @@ export const shopCategories = [
   "Styling y acabado",
   "Crecimiento",
 ];
+
+// Fotos de producto por categoría (Unsplash, libres de licencia). Son imágenes
+// genéricas de grooming premium para dar aspecto de tienda real. Reemplazalas
+// por fotos reales de cada producto subiéndolas a /public/images/products.
+export const productPhotos = {
+  "Cuidado capilar": [
+    "/images/products/prod-shampoo.jpg",
+    "/images/products/prod-mask.jpg",
+    "/images/products/prod-lotion.jpg",
+    "/images/products/prod-bottle.jpg",
+  ],
+  "Barba y afeitado": [
+    "/images/products/prod-oils.jpg",
+    "/images/products/prod-serum.jpg",
+    "/images/products/prod-bottle.jpg",
+    "/images/products/prod-lotion.jpg",
+  ],
+  "Styling y acabado": [
+    "/images/products/prod-serum.jpg",
+    "/images/products/prod-oils.jpg",
+    "/images/products/prod-mask.jpg",
+    "/images/products/prod-bottle.jpg",
+  ],
+  Crecimiento: [
+    "/images/products/prod-serum.jpg",
+    "/images/products/prod-oils.jpg",
+  ],
+};
 
 // Productos a la venta en el local (de catálogo Salerm, Suavecito, Kenra, etc.)
 export const products = [
