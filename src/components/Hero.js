@@ -63,7 +63,7 @@ export default function Hero() {
                 alt="Interior de barbería con sillones clásicos, blanco y negro"
                 fill
                 unoptimized
-                className="cinematic object-cover"
+                className="cinematic object-cover "
                 sizes="100vw"
               />
             </div>
@@ -76,14 +76,14 @@ export default function Hero() {
           className="animate-rise hidden lg:block"
           style={{ "--rise-delay": "200ms" }}
         >
-          <div className="grain relative overflow-hidden rounded-2xl border border-black/10 lg:h-[72vh] lg:max-h-[600px]">
+          <div className="group grain relative overflow-hidden rounded-2xl border border-black/10 lg:h-[72vh] lg:max-h-[600px]">
             <Image
               src="/images/gallery/g2.jpg"
               alt="Interior de barbería con sillones clásicos, blanco y negro"
               fill
               priority
               unoptimized
-              className="cinematic object-cover"
+              className="object-cover grayscale transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:grayscale-0"
               sizes="45vw"
             />
           </div>
