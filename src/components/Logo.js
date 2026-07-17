@@ -10,10 +10,10 @@ export default function Logo({ size = "md", className = "" }) {
 
   return (
     <Image
-      src="/logo/reckless-logo.svg"
+      src="/logo/reckless-wordmark.jpeg"
       alt="Reckless Studio"
       width={width}
-      height={Math.round((width * 130) / 560)}
+      height={Math.round((width * 429) / 1600)}
       unoptimized
       priority
       className={`${className} h-auto`}
