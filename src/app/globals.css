@@ -171,6 +171,10 @@ body {
   .marquee-track {
     animation: none;
   }
+
+  .animate-ping {
+    animation: none;
+  }
 }
 
 /* -------------------------------------------------------------------------- */

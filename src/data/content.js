@@ -112,27 +112,35 @@ export const team = [
   },
 ];
 
-// Galería. Las dos primeras son fotos reales del local; el resto son imágenes
-// de barbería de alta calidad (Unsplash, libres de licencia) para dar densidad.
-// Reemplazalas por fotos reales del estudio cuando las tengas: subí la imagen a
-// /public/images/gallery y actualizá el "src" aquí.
-// Nota: g2.jpg no está acá -- se usa exclusivamente como imagen del Hero.
+// Galería. Todas fotos reales del local y del equipo. El logo va en el medio
+// de la primera fila (posición 2 de 3 en desktop/tablet). Para agregar más,
+// subí la imagen a /public/images/gallery y añadí un objeto acá.
 export const gallery = [
+  {
+    src: "/images/gallery/studio1.jpeg",
+    alt: "Estación de barbero con espejo iluminado en Reckless Studio",
+  },
+  {
+    src: "/images/gallery/logo.jpeg",
+    alt: "Logo de Reckless Studio",
+    fit: "contain",
+  },
   {
     src: "/images/gallery/local-recepcion.jpg",
     alt: "Recepción y zona de lavado de Reckless Studio con el logo en la pared",
   },
   {
+    src: "/images/gallery/studio2.jpeg",
+    alt: "Vista general del estudio con sala de espera y zona de lavado",
+  },
+  {
     src: "/images/gallery/local-sillones.avif",
     alt: "Área principal de barbería con sillones en Reckless Studio",
   },
-  { src: "/images/gallery/g1.jpg", alt: "Afeitado con navaja en barbería" },
   {
-    src: "/images/gallery/g4.jpg",
-    alt: "Corte de cabello con navaja y detalle de degradado",
+    src: "/images/gallery/equiporeckless.jpeg",
+    alt: "Equipo de Reckless Studio frente al logo del local",
   },
-  { src: "/images/gallery/g5.jpg", alt: "Afeitado clásico con toalla" },
-  { src: "/images/gallery/g7.jpg", alt: "Corte texturizado con peine" },
 ];
 
 // Testimonios de ejemplo -- reemplazalos por reseñas reales de clientes.

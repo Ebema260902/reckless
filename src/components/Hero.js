@@ -1,5 +1,17 @@
 import Image from "next/image";
-import { business, whatsappLink } from "@/data/content";
+import PhotoTag from "./PhotoTag";
+import { business, team, whatsappLink } from "@/data/content";
+
+const findMember = (instagram) => team.find((m) => m.instagram === instagram);
+
+// Posiciones (% del ancho/alto de la foto) de cada integrante en
+// equiporeckless.jpeg, de izquierda a derecha. "dir" indica hacia qué lado
+// se despliega la etiqueta para no salirse del marco de la imagen.
+const teamPhotoTags = [
+  { ...findMember("bee_barberchic._reckless"), x: 27, y: 62, dir: "right" },
+  { ...findMember("recklesssbarber"), x: 50, y: 58, dir: "right" },
+  { ...findMember("nis_beauty_reckless"), x: 74, y: 60, dir: "left" },
+];
 
 export default function Hero() {
   return (
@@ -59,11 +71,11 @@ export default function Hero() {
           >
             <div className="grain relative h-[220px] overflow-hidden rounded-2xl border border-black/10 sm:h-[280px]">
               <Image
-                src="/images/gallery/g2.jpg"
-                alt="Interior de barbería con sillones clásicos, blanco y negro"
+                src="/images/gallery/equiporeckless.jpeg"
+                alt="Equipo de Reckless Studio"
                 fill
                 unoptimized
-                className="cinematic object-cover "
+                className="cinematic object-cover"
                 sizes="100vw"
               />
             </div>
@@ -78,14 +90,17 @@ export default function Hero() {
         >
           <div className="group grain relative overflow-hidden rounded-2xl border border-black/10 lg:h-[72vh] lg:max-h-[600px]">
             <Image
-              src="/images/gallery/g2.jpg"
-              alt="Interior de barbería con sillones clásicos, blanco y negro"
+              src="/images/gallery/equiporeckless.jpeg"
+              alt="Equipo de Reckless Studio"
               fill
               priority
               unoptimized
               className="object-cover grayscale transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:grayscale-0"
               sizes="45vw"
             />
+            {teamPhotoTags.map((tag) => (
+              <PhotoTag key={tag.instagram} {...tag} />
+            ))}
           </div>
         </div>
       </div>

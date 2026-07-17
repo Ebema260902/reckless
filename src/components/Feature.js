@@ -11,7 +11,7 @@ export default function Feature() {
       <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-2">
         <Reveal className="relative h-[420px] overflow-hidden rounded-2xl border border-white/10 sm:h-[500px] lg:h-[560px]">
           <Image
-            src="/images/gallery/local-recepcion.jpg"
+            src="/images/gallery/studio2.jpeg"
             alt="Recepción de Reckless Studio con el logo iluminado en la pared"
             fill
             unoptimized

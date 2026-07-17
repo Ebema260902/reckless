@@ -24,7 +24,11 @@ export default function Gallery() {
                 alt={item.alt}
                 fill
                 unoptimized
-                className="object-cover grayscale transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:grayscale-0"
+                className={`grayscale transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:grayscale-0 ${
+                  item.fit === "contain"
+                    ? "object-contain bg-white p-6"
+                    : "object-cover"
+                }`}
                 sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 30vw"
               />
             </Reveal>
