@@ -37,8 +37,8 @@ function TikTokIcon(props) {
 
 const socials = [
   { name: "Instagram", url: business.instagramUrl, Icon: InstagramIcon },
-  { name: "Facebook", url: business.facebookUrl, Icon: FacebookIcon },
-  { name: "TikTok", url: business.tiktokUrl, Icon: TikTokIcon },
+  // { name: "Facebook", url: business.facebookUrl, Icon: FacebookIcon },
+  // { name: "TikTok", url: business.tiktokUrl, Icon: TikTokIcon },
 ];
 
 export default function Footer() {

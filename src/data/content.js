@@ -9,7 +9,7 @@ export const business = {
   tagline: "Barbería",
   city: "Palmares, Alajuela, Costa Rica",
   address:
-    "100 sur y 10 oeste del salón parroquial Centro, Palmares, Alajuela, 20701",
+    "Palmares de Alajuela 200 metros sur y 25 metros este de la escuela central",
   whatsappNumber: "50687496943", // 506 + 8749 6943, sin espacios ni signos
   whatsappDisplay: "8749 6943",
   instagramUrl: "https://www.instagram.com/recklessstudiocr/",
@@ -22,9 +22,9 @@ export const business = {
   // Mapa aproximado centrado en Palmares (OpenStreetMap, no requiere API key).
   // Si tenés la ubicación exacta del local, ajustá lat/lon abajo.
   mapsEmbedSrc:
-    "https://www.openstreetmap.org/export/embed.html?bbox=-84.4435799%2C10.0385460%2C-84.4275799%2C10.0545460&layer=mapnik&marker=10.0465460%2C-84.4355799",
+  "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d998.7532910127544!2d-84.4303826!3d10.056832!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa04514b32196b1%3A0xba2da730537cb864!2sReckless%20Studio%20Barber%C3%ADa!5e1!3m2!1ses-419!2scr!4v1785440168383!5m2!1ses-419!2scr",
   mapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=" +
+  "https://maps.google.com/?q=Reckless+Studio+Barbería,+Palmares,+Costa+Rica" +
     encodeURIComponent(
       "100 sur y 10 oeste del salón parroquial Centro, Palmares, Alajuela, Costa Rica"
     ),
@@ -60,28 +60,28 @@ export const services = [
   },
   {
     name: "Corte + Barba",
-    price: 10000,
+    price: 13000,
     description: "Corte de cabello más diseño y perfilado de barba.",
     featured: true,
     image: "/images/gallery/g4.jpg",
   },
   {
     name: "Diseño y perfilado de barba",
-    price: 5000,
+    price: 6000,
     description: "Perfilado, línea y afeitado de contorno.",
     image: "/images/gallery/g5.jpg",
   },
   {
     name: "Afeitado clásico",
-    price: 6000,
+    price: 7000,
     description: "Afeitado con navaja, toalla caliente y after shave.",
     image: "/images/gallery/g1.jpg",
   },
   {
     name: "Corte niño",
-    price: 6000,
+    price: 7000,
     description: "Corte para niños hasta 12 años.",
-    image: "/images/gallery/local-sillones.avif",
+    image: "/images/gallery/corte-nino.jpeg",
   },
   {
     name: "Perfilado de cejas",
@@ -126,15 +126,15 @@ export const gallery = [
     fit: "contain",
   },
   {
-    src: "/images/gallery/local-recepcion.jpg",
+    src: "/images/gallery/studio2.jpeg",
     alt: "Recepción y zona de lavado de Reckless Studio con el logo en la pared",
   },
   {
-    src: "/images/gallery/studio2.jpeg",
-    alt: "Vista general del estudio con sala de espera y zona de lavado",
+    src: "/images/gallery/nino.jpeg",
+    alt: "Corte a niño",
   },
   {
-    src: "/images/gallery/local-sillones.avif",
+    src: "/images/gallery/estudio-reckless.jpeg",
     alt: "Área principal de barbería con sillones en Reckless Studio",
   },
   {
@@ -159,185 +159,50 @@ export const testimonials = [
   },
 ];
 
-// Categorías de la tienda
-export const shopCategories = [
-  "Cuidado capilar",
-  "Barba y afeitado",
-  "Styling y acabado",
-  "Crecimiento",
-];
-
-// Fotos de producto por categoría (Unsplash, libres de licencia). Son imágenes
-// genéricas de grooming premium para dar aspecto de tienda real. Reemplazalas
-// por fotos reales de cada producto subiéndolas a /public/images/products.
-export const productPhotos = {
-  "Cuidado capilar": [
-    "/images/products/prod-shampoo.jpg",
-    "/images/products/prod-mask.jpg",
-    "/images/products/prod-lotion.jpg",
-    "/images/products/prod-bottle.jpg",
-  ],
-  "Barba y afeitado": [
-    "/images/products/prod-oils.jpg",
-    "/images/products/prod-serum.jpg",
-    "/images/products/prod-bottle.jpg",
-    "/images/products/prod-lotion.jpg",
-  ],
-  "Styling y acabado": [
-    "/images/products/prod-serum.jpg",
-    "/images/products/prod-oils.jpg",
-    "/images/products/prod-mask.jpg",
-    "/images/products/prod-bottle.jpg",
-  ],
-  Crecimiento: [
-    "/images/products/prod-serum.jpg",
-    "/images/products/prod-oils.jpg",
-  ],
-};
-
-// Productos a la venta en el local (de catálogo Salerm, Suavecito, Kenra, etc.)
+// Productos reales a la venta en el local. Cada uno con su foto real tomada
+// en el estudio. Sin precios fijos -- se consultan por WhatsApp porque
+// cambian según disponibilidad. Para agregar uno nuevo: subí la foto a
+// /public/images/products y agregá un objeto acá.
 export const products = [
-  // Cuidado capilar
   {
-    name: "Champú y gel de baño todo en uno Salerm Homme 1000ml",
-    description: "Stop to Relax barber line",
-    category: "Cuidado capilar",
-  },
-  {
-    name: "Champú control caspa HairLab de Salerm",
+    name: "Minoxidil Kirkland Signature 5%",
+    brand: "Kirkland Signature",
     description:
-      "Frena progresivamente la aparición de caspa y calma los picores asociados. Formulado con péptidos.",
-    category: "Cuidado capilar",
+      "Tratamiento tópico para el crecimiento de cabello, extra fuerte. Caja para 6 meses (6 frascos x 60ml).",
+    image: "/images/products/1producto-real-minoxidil.jpeg",
   },
   {
-    name: "Arganology Biokera de Salerm",
+    name: "MinoxiPlus 12% Premium",
+    brand: "Jevama",
     description:
-      "Sérum de aceite de argán y algodón ideal para cabellos maltratados que necesiten un plus de hidratación.",
-    category: "Cuidado capilar",
+      "Minoxidil premium al 12%. Fortalece y da grosor al cabello, cuida el cuero cabelludo. 60ml.",
+    image: "/images/products/2producto-real.jpeg",
   },
   {
-    name: "Mascarilla capilar al germen de trigo Salerm",
-    description: "Para cabellos secos.",
-    category: "Cuidado capilar",
-  },
-  {
-    name: "Bálsamo acondicionador granada Salerm 1200ml",
-    description: "Uso diario 24/7, vitaminas A, B y C.",
-    category: "Cuidado capilar",
-  },
-  {
-    name: "Champú hidratante granada Salerm 1200ml",
-    description: "Uso diario 24/7.",
-    category: "Cuidado capilar",
-  },
-  {
-    name: "Salerm21 Leave-in Conditioner",
-    description: "Proteínas de seda.",
-    category: "Cuidado capilar",
-  },
-  {
-    name: "Protector térmico de Salerm",
-    description: "",
-    category: "Cuidado capilar",
-  },
-
-  // Barba y afeitado
-  {
-    name: "Gel de afeitado 200ml Salerm Homme",
-    description: "",
-    category: "Barba y afeitado",
-  },
-  {
-    name: "Gel exfoliante facial Salerm Homme",
+    name: "OSiS+ Mess Up",
+    brand: "Schwarzkopf Professional",
     description:
-      "Limpieza facial. Elimina impurezas, células muertas de la piel y el exceso de grasa.",
-    category: "Barba y afeitado",
+      "Pasta mate texturizante para un acabado despeinado natural, sobre cabello seco. 100ml.",
+    image: "/images/products/3producto-real.jpeg",
   },
   {
-    name: "Aceite de barba 30ml Salerm Homme",
+    name: "OSiS+ Mighty Matte",
+    brand: "Schwarzkopf Professional",
     description:
-      "Con aceite de frambuesa orgánico y rosa mosqueta. Apto para barba, bigote y cabello.",
-    category: "Barba y afeitado",
+      "Crema mate de fijación fuerte, acabado ultra mate sobre cabello seco. 100ml.",
+    image: "/images/products/31producto-real.jpeg",
   },
   {
-    name: "Gel refrescante para después del afeitado",
-    description: "Previene irritación de la piel, sensación de frescura.",
-    category: "Barba y afeitado",
-  },
-
-  // Styling y acabado
-  {
-    name: "Cera Mate Trendstarter 113g",
-    description: "",
-    badge: "Disponible",
-    category: "Styling y acabado",
+    name: "Free.Hold",
+    brand: "Kevin.Murphy",
+    description: "Pasta de peinado con fijación media y acabado natural. 100g.",
+    image: "/images/products/4producto-real.jpeg",
   },
   {
-    name: "Polvos de peinado Salerm Homme",
+    name: "Fiber",
+    brand: "American Crew",
     description:
-      "Cera en polvo que eleva el peinado a otro nivel, sin apelmazar. Acabado mate y con volumen.",
-    category: "Styling y acabado",
-  },
-  {
-    name: "Salerm 21 Finish 120% +brillo",
-    description:
-      "Ilumina y da brillo con hidratación, suavidad y brillo natural sobre todo tipo de cabellos.",
-    category: "Styling y acabado",
-  },
-  {
-    name: "Kenra pasta de acabado súper brillante 56.7g",
-    description: "",
-    price: 10000,
-    category: "Styling y acabado",
-  },
-  {
-    name: "Gel intenso 500ml Salerm Homme",
-    description: "",
-    badge: "Muy recomendado",
-    category: "Styling y acabado",
-  },
-  {
-    name: "Laca Fuerte Salerm Homme 260g",
-    description: "Filtro solar UV PS15, células madre de algodón y panthenol.",
-    category: "Styling y acabado",
-  },
-  {
-    name: "Cera de cabello y barba Salerm Homme 100g",
-    description: "Brillo y fijación media.",
-    category: "Styling y acabado",
-  },
-  {
-    name: "Crema control mate de Salerm Homme 100g",
-    description: "Fijación elástica.",
-    category: "Styling y acabado",
-  },
-  {
-    name: "Laca hi repair extra fuerte de Salerm",
-    description: "Repara el cabello y lo protege del sol, además de fijar.",
-    category: "Styling y acabado",
-  },
-  {
-    name: "Matt Clay 02",
-    description: "Arcilla mate de fijación media.",
-    category: "Styling y acabado",
-  },
-  {
-    name: "Pomada brillante Suavecito",
-    description: "Fijación media y fuerte disponibles.",
-    price: 12000,
-    category: "Styling y acabado",
-  },
-
-  // Crecimiento
-  {
-    name: "Minoxiplus 10%",
-    description: "",
-    price: 18000,
-    category: "Crecimiento",
-  },
-  {
-    name: "Minoxidil líquido al 5%",
-    description: "Caja de 6 unidades ₡42.000 · unidad ₡10.000",
-    category: "Crecimiento",
+      "Fijación fuerte y brillo bajo, ideal para peinados con textura definida. 85g.",
+    image: "/images/products/5producto-real.jpeg",
   },
 ];

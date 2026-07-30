@@ -17,7 +17,7 @@ export default function Location() {
               title="Ubicación Reckless Studio"
               src={business.mapsEmbedSrc}
               className="h-80 w-full lg:h-full"
-              style={{ border: 0, filter: "grayscale(1) contrast(1.05)" }}
+              style={{ border: 0}}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />

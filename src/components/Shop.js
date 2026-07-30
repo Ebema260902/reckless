@@ -1,28 +1,9 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
-import {
-  products,
-  productPhotos,
-  shopCategories,
-  whatsappLink,
-} from "@/data/content";
-
-const formatColones = (value) =>
-  new Intl.NumberFormat("es-CR", {
-    style: "currency",
-    currency: "CRC",
-    maximumFractionDigits: 0,
-  }).format(value);
+import { products, whatsappLink } from "@/data/content";
 
 export default function Shop() {
-  const [active, setActive] = useState(shopCategories[0]);
-  const filtered = products.filter((p) => p.category === active);
-  const pool = productPhotos[active] || [];
-
   return (
     <section
       id="tienda"
@@ -32,49 +13,31 @@ export default function Shop() {
         <SectionHeading
           eyebrow="Productos"
           title="Tienda"
-          description="Línea profesional Salerm, Suavecito, Kenra y más, disponible en el local."
+          description="Línea profesional disponible en el local. Precios y disponibilidad, por WhatsApp."
         />
 
-        <div className="mb-12 flex flex-wrap justify-center gap-2">
-          {shopCategories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActive(cat)}
-              className={`rounded-full border px-5 py-2 text-sm font-medium transition-all duration-300 ease-in-out hover:-translate-y-0.5 ${
-                active === cat
-                  ? "border-black bg-black text-white"
-                  : "border-black/20 text-black/60 hover:border-black/50 hover:text-black"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
         <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((product, i) => (
-            <Reveal key={`${active}-${product.name}`} delay={(i % 3) * 90}>
+          {products.map((product, i) => (
+            <Reveal key={product.name} delay={(i % 3) * 90}>
               <article className="group">
-                {/* Contenedor de imagen de producto -- foto real de grooming.
-                    Reemplazá el src por la foto real de cada producto. */}
                 <div className="relative aspect-square overflow-hidden rounded-2xl bg-neutral-100">
                   <Image
-                    src={pool[i % pool.length]}
+                    src={product.image}
                     alt={product.name}
                     fill
                     unoptimized
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
                   />
-                  {product.badge && (
-                    <span className="absolute left-3 top-3 rounded-full bg-black px-2.5 py-1 text-[0.6rem] font-medium uppercase tracking-wide text-white">
-                      {product.badge}
-                    </span>
-                  )}
                 </div>
 
                 <div className="mt-4">
-                  <h3 className="text-sm font-semibold leading-snug">
+                  {product.brand && (
+                    <p className="eyebrow text-[0.65rem] text-black/40">
+                      {product.brand}
+                    </p>
+                  )}
+                  <h3 className="mt-1 text-sm font-semibold leading-snug">
                     {product.name}
                   </h3>
                   {product.description && (
@@ -82,11 +45,16 @@ export default function Shop() {
                       {product.description}
                     </p>
                   )}
-                  {product.price && (
-                    <p className="mt-2 text-sm font-bold">
-                      {formatColones(product.price)}
-                    </p>
-                  )}
+                  <a
+                    href={whatsappLink(
+                      `Hola, quisiera consultar precio y disponibilidad de ${product.name}`
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-block text-xs font-semibold text-black underline decoration-black/30 underline-offset-2 transition-colors duration-300 ease-in-out hover:decoration-black"
+                  >
+                    Consultar precio y disponibilidad →
+                  </a>
                 </div>
               </article>
             </Reveal>
