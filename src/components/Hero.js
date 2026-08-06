@@ -27,11 +27,18 @@ export default function Hero() {
           </p>
 
           <h1
-            className="animate-rise mt-5 break-words text-5xl font-black leading-[0.95] tracking-tight sm:text-6xl md:text-7xl lg:mt-6 lg:text-8xl"
+            className="animate-rise mt-5 lg:mt-6"
             style={{ "--rise-delay": "120ms" }}
           >
-            {business.name.replace(" Studio", "")}
-            <span className="align-top text-black">.</span>
+            <Image
+              src="/logo/reckless-wordmark.jpeg"
+              alt={business.name}
+              width={1600}
+              height={429}
+              unoptimized
+              priority
+              className="h-auto w-56 sm:w-72 md:w-96 lg:w-[30rem]"
+            />
           </h1>
 
           <p
@@ -75,14 +82,14 @@ export default function Hero() {
                 alt="Equipo de Reckless Studio"
                 fill
                 unoptimized
-                className="cinematic object-cover"
+                className="object-cover"
                 sizes="100vw"
               />
             </div>
           </div>
         </div>
 
-        {/* Ancla visual -- imagen cinematográfica en blanco y negro con grano.
+        {/* Ancla visual -- foto a color con grano sutil.
             Solo desktop: en mobile la misma foto ya aparece arriba, compacta. */}
         <div
           className="animate-rise hidden lg:block"
@@ -95,7 +102,7 @@ export default function Hero() {
               fill
               priority
               unoptimized
-              className="object-cover grayscale transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:grayscale-0"
+              className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
               sizes="45vw"
             />
             {teamPhotoTags.map((tag) => (
